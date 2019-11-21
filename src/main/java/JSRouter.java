@@ -12,12 +12,14 @@ public class JSRouter {
     public Route jsRoute(ActorRef actor) {
         return route(
 
-                get(() -> parameter("message", m -> {
+                get(() -> parameter("message", message -> {
                     Future<Object> getResult = Patterns.ask(actor, new Message(), 5000);
                     return completeOKWithFuture(getResult, Jackson.marshaller());
                 })),
 
-                post(() -> entity(Jackson.unmarshaller()))
+                post(() -> entity(Jackson.unmarshaller(JSToObject.class), message -> {
+                    MainActor.
+                }))
         );
     }
 }
