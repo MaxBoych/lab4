@@ -4,6 +4,10 @@ import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
+import akka.stream.javadsl.Flow;
+
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 import static akka.http.javadsl.server.Directives.route;
 
@@ -15,5 +19,7 @@ public class Main {
 
         Http http = Http.get(system);
         ActorMaterializer materializer = ActorMaterializer.create(system);
+
+        Flow<HttpRequest, HttpResponse, >
     }
 }
