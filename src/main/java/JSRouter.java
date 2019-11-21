@@ -3,7 +3,7 @@ import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 
-import java.util.concurrent.Future;
+import scala.concurrent.Future;
 
 import static akka.http.javadsl.server.Directives.*;
 
