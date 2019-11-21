@@ -1,3 +1,4 @@
+import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
@@ -20,6 +21,7 @@ public class Main {
         Http http = Http.get(system);
         ActorMaterializer materializer = ActorMaterializer.create(system);
 
-        Flow<HttpRequest, HttpResponse, >
+        Flow<HttpRequest, HttpResponse, NotUsed> flow = new JSRouter().jsRoute(mainActor)
+                .flow(system, materializer);
     }
 }
