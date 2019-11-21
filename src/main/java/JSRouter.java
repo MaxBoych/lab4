@@ -6,7 +6,9 @@ public class JSRouter {
 
     public Route jsRoute() {
         return route(
-                get(() -> parameter("smth", ))
+                get(() -> parameter("smth", smth -> {
+                    
+                }))
         );
     }
 }
