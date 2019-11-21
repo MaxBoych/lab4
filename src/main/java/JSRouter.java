@@ -1,4 +1,5 @@
 import akka.actor.ActorRef;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 
@@ -12,7 +13,7 @@ public class JSRouter {
         return route(
                 get(() -> parameter("message", m -> {
                     Future<Object> res = Patterns.ask(actor, new Message(), 5000);
-                    return 
+                    return completeOKWithFuture(res, Jackson.marshaller());
                 }))
         );
     }
