@@ -35,6 +35,7 @@ public class Main {
                 materializer
         );
 
-        System.in.read();
+        completionStage.thenCompose(ServerBinding::unbind)
+                .thenAccept(sv -> system.terminate());
     }
 }
