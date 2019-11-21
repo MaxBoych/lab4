@@ -1,13 +1,12 @@
-import java.awt.*;
 import java.util.ArrayList;
 
 public class JSToObject {
 
     private String id;
     private String js;
-    private ArrayList<JSTest> tests;
+    private ArrayList<JSTests> tests;
 
-    public  JSToObject(String id, String js, ArrayList<JSTest> tests) {
+    public  JSToObject(String id, String js, ArrayList<JSTests> tests) {
         this.id = id;
         this.js = js;
         this.tests = tests;
@@ -21,7 +20,7 @@ public class JSToObject {
         return js;
     }
 
-    public ArrayList<JSTest> getTests() {
+    public ArrayList<JSTests> getTests() {
         return tests;
     }
 }
