@@ -5,9 +5,7 @@ import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
-import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
-import akka.stream.CompletionStrategy;
 import akka.stream.javadsl.Flow;
 
 import akka.http.javadsl.model.HttpRequest;
@@ -21,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
 
         ActorSystem system = ActorSystem.create("main");
-        ActorRef mainActor = system.actorOf(Props.create(MainActor.class));
+        ActorRef mainActor = system.actorOf(Props.create(RouteActor.class));
 
         Http http = Http.get(system);
         ActorMaterializer materializer = ActorMaterializer.create(system);

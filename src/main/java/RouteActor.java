@@ -1,6 +1,6 @@
 import akka.actor.AbstractActor;
 
-public class MainActor extends AbstractActor {
+public class RouteActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
