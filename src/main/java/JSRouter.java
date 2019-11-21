@@ -11,7 +11,7 @@ public class JSRouter {
     public Route jsRoute(ActorRef actor) {
         return route(
                 get(() -> parameter("smth", smth -> {
-                    Future<Object> res = Patterns.ask(actor, new )
+                    Future<Object> res = Patterns.ask(actor, new Message(), )
                 }))
         );
     }
