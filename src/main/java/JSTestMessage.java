@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class JSTest {
+public class JSTestMessage {
     private String testName;
     private String expected;
     private String functionName;

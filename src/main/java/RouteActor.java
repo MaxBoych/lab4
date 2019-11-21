@@ -20,7 +20,7 @@ public class RouteActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(JSToObject.class, message -> {
-                    for (JSTests test : message.getTests()) {
+                    for (JSTest test : message.getTests()) {
                         executeActor.tell();
                     }
                 })

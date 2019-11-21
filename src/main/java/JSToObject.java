@@ -4,9 +4,9 @@ public class JSToObject {
 
     private String id;
     private String js;
-    private ArrayList<JSTests> tests;
+    private ArrayList<JSTest> tests;
 
-    public  JSToObject(String id, String js, ArrayList<JSTests> tests) {
+    public  JSToObject(String id, String js, ArrayList<JSTest> tests) {
         this.id = id;
         this.js = js;
         this.tests = tests;
@@ -20,7 +20,7 @@ public class JSToObject {
         return js;
     }
 
-    public ArrayList<JSTests> getTests() {
+    public ArrayList<JSTest> getTests() {
         return tests;
     }
 }
