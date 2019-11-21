@@ -11,10 +11,13 @@ public class JSRouter {
 
     public Route jsRoute(ActorRef actor) {
         return route(
+
                 get(() -> parameter("message", m -> {
-                    Future<Object> res = Patterns.ask(actor, new Message(), 5000);
-                    return completeOKWithFuture(res, Jackson.marshaller());
-                }))
+                    Future<Object> getResult = Patterns.ask(actor, new Message(), 5000);
+                    return completeOKWithFuture(getResult, Jackson.marshaller());
+                })),
+
+                post()
         );
     }
 }
