@@ -17,7 +17,7 @@ public class JSRouter {
                     return completeOKWithFuture(getResult, Jackson.marshaller());
                 })),
 
-                post()
+                post(() -> entity(Jackson.unmarshaller()))
         );
     }
 }
