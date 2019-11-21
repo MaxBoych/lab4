@@ -4,7 +4,9 @@ import static akka.http.javadsl.server.Directives.route;
 
 public class JSRouter {
 
-    private Route jsRoute() {
-        return route();
+    public Route jsRoute() {
+        return route(
+                
+        );
     }
 }
