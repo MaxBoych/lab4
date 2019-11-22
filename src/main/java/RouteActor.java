@@ -24,7 +24,7 @@ public class RouteActor extends AbstractActor {
                         JSTestMessage jsTestMessage = new JSTestMessage(
                                 message.getPackageId(),
                                 test.getExpectedResult(),
-                                test.getFunctionName(),
+                                message.getFunctionName(),
                                 test);
                         executeActor.tell(jsTestMessage, self());
                     }
