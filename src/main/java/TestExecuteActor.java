@@ -15,7 +15,7 @@ public class TestExecuteActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JSTestMessage.class, message -> {
                     JSTest test = message.getTest();
-                    List<Object> params = test.getParams();
+                    Object[] params = test.getParams();
 
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     engine.eval(message.getJsScript());

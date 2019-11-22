@@ -6,12 +6,12 @@ public class JSTest {
 
     private String testName;
     private String expectedResult;
-    private List<Object> params;
+    private Object[] params;
 
     public JSTest(String testName, String js, Object[] params) {
         this.testName = testName;
         this.expectedResult = js;
-        this.params = Arrays.asList(params);
+        this.params = params;
     }
 
     public String getTestName() {
@@ -22,7 +22,7 @@ public class JSTest {
         return expectedResult;
     }
 
-    public List<Object> getParams() {
+    public Object[] getParams() {
         return params;
     }
 }

@@ -7,14 +7,14 @@ public class JSObject {
     private String packageId;
     private String jsScript;
     private String functionName;
-    private List<JSTest> tests;
+    private JSTest[] tests;
 
     public JSObject(String testName, String js,
                     String functionName, JSTest[] tests) {
         this.packageId = testName;
         this.jsScript = js;
         this.functionName = functionName;
-        this.tests = Arrays.asList(tests);
+        this.tests = tests;
     }
 
     public String getPackageId() {
@@ -29,7 +29,7 @@ public class JSObject {
         return functionName;
     }
 
-    public List<JSTest> getTests() {
+    public JSTest[] getTests() {
         return tests;
     }
 }
