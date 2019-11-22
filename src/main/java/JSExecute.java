@@ -1,14 +1,15 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class JSExecute {
 
     private String testName;
     private String expectedResult;
-    private ArrayList<Integer> params;
+    private List<Integer> params;
     private String result;
     private boolean isExpected;
 
-    public JSExecute(String testName, String expectedResult, ArrayList<Integer> params,
+    public JSExecute(String testName, String expectedResult, List<Integer> params,
                      String result, boolean isExpected) {
         this.testName = testName;
         this.expectedResult = expectedResult;
@@ -25,7 +26,7 @@ public class JSExecute {
         return expectedResult;
     }
 
-    public ArrayList<Integer> getParams() {
+    public List<Integer> getParams() {
         return params;
     }
 

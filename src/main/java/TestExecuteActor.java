@@ -6,6 +6,7 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TestExecuteActor extends AbstractActor {
 
@@ -14,7 +15,7 @@ public class TestExecuteActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JSTestMessage.class, message -> {
                     JSTest test = message.getTest();
-                    ArrayList<Integer> params = test.getParams();
+                    List<Integer> params = test.getParams();
 
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     engine.eval(message.getJsScript());
