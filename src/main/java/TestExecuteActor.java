@@ -20,7 +20,7 @@ public class TestExecuteActor extends AbstractActor {
                     Invocable invocable = (Invocable) engine;
                     String res = invocable.invokeFunction(message.getFunctionName(), params).toString();
 
-                    
+                    getContext().actorSelection()
                 })
     }
 }
