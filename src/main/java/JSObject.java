@@ -1,17 +1,19 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class JSObject {
 
     private String packageId;
     private String jsScript;
     private String functionName;
-    private ArrayList<JSTest> tests;
+    private List<JSTest> tests;
 
-    public JSObject(String testName, String js, String functionName, ArrayList<JSTest> tests) {
+    public JSObject(String testName, String js, String functionName, JSTest[] tests) {
         this.packageId = testName;
         this.jsScript = js;
         this.functionName = functionName;
-        this.tests = tests;
+        this.tests = Arrays.asList(tests);
     }
 
     public String getPackageId() {
@@ -26,7 +28,7 @@ public class JSObject {
         return functionName;
     }
 
-    public ArrayList<JSTest> getTests() {
+    public List<JSTest> getTests() {
         return tests;
     }
 }

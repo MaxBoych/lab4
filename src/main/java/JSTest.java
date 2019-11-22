@@ -1,15 +1,17 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class JSTest {
 
     private String testName;
     private String expectedResult;
-    private ArrayList<Integer> params;
+    private List<Integer> params;
 
-    public JSTest(String testName, String js, ArrayList<Integer> params) {
+    public JSTest(String testName, String js, Integer[] params) {
         this.testName = testName;
         this.expectedResult = js;
-        this.params = params;
+        this.params = Arrays.asList(params);
     }
 
     public String getTestName() {
@@ -20,7 +22,7 @@ public class JSTest {
         return expectedResult;
     }
 
-    public ArrayList<Integer> getParams() {
+    public List<Integer> getParams() {
         return params;
     }
 }
