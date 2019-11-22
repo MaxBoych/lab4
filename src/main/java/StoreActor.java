@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class StoreActor extends AbstractActor {
     private Map<String, ArrayList<JSStoreMessage>> store = new HashMap<>();
+
     @Override
     public Receive createReceive() {
 
@@ -20,8 +21,12 @@ public class StoreActor extends AbstractActor {
                         store.put(message.getTestName(), list);
                     }
                 })
-                .match(GetMessage.class, req -> sender().tell(
-                        new StoreMessage(req.getKey(), store.get(req.getKey())), self())
+                .match(Message.class, message -> {
+                            ArrayList<JSStoreMessage> list = store.get(message.getTestName());
+                            if (list != null) {
+                                sender().tell(list, self());
+                            }
+                        }
                 ).build();
     }
 }
