@@ -13,13 +13,13 @@ public class JSRouter {
         return route(
 
                 get(() -> parameter("message", message -> {
-                    Future<Object> getResult = Patterns.ask(actor, new Message(), 5000);
+                    Future<Object> getResult = Patterns.ask(actor, new Message(message), 5000);
                     return completeOKWithFuture(getResult, Jackson.marshaller());
                 })),
 
                 post(() -> entity(Jackson.unmarshaller(JSObject.class), message -> {
                     actor.tell(message, ActorRef.noSender());
-                    return complete("message");
+                    return complete("message replied");
                 }))
         );
     }
