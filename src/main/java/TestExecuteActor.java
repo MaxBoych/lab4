@@ -1,4 +1,5 @@
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -23,7 +24,8 @@ public class TestExecuteActor extends AbstractActor {
                     JSStoreMessage storeMessage = new JSStoreMessage(test.getTestName(),
                             test.getJs(), test.getParams(), result);
 
-                    getSender().tell();
+                    getSender().tell(storeMessage, ActorRef.noSender());
                 })
+                .build();
     }
 }
