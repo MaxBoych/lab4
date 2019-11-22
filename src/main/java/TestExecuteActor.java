@@ -7,7 +7,7 @@ public class TestExecuteActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(JSTestMessage.class, message -> {
-                    
+                    JSTest test = message.getTest();
                 })
     }
 }
