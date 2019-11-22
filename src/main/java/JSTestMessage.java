@@ -5,4 +5,6 @@ public class JSTestMessage {
     private String expected;
     private String functionName;
     private JSTest test;
+
+    final 
 }
