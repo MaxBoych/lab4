@@ -6,9 +6,9 @@ public class JSTest {
 
     private String testName;
     private String expectedResult;
-    private List<Integer> params;
+    private List<Object> params;
 
-    public JSTest(String testName, String js, Integer[] params) {
+    public JSTest(String testName, String js, Object[] params) {
         this.testName = testName;
         this.expectedResult = js;
         this.params = Arrays.asList(params);
@@ -22,7 +22,7 @@ public class JSTest {
         return expectedResult;
     }
 
-    public List<Integer> getParams() {
+    public List<Object> getParams() {
         return params;
     }
 }

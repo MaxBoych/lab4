@@ -9,7 +9,8 @@ public class JSObject {
     private String functionName;
     private List<JSTest> tests;
 
-    public JSObject(String testName, String js, String functionName, JSTest[] tests) {
+    public JSObject(String testName, String js,
+                    String functionName, JSTest[] tests) {
         this.packageId = testName;
         this.jsScript = js;
         this.functionName = functionName;

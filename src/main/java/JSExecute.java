@@ -5,11 +5,11 @@ public class JSExecute {
 
     private String testName;
     private String expectedResult;
-    private List<Integer> params;
+    private List<Object> params;
     private String result;
     private boolean isExpected;
 
-    public JSExecute(String testName, String expectedResult, List<Integer> params,
+    public JSExecute(String testName, String expectedResult, List<Object> params,
                      String result, boolean isExpected) {
         this.testName = testName;
         this.expectedResult = expectedResult;
@@ -26,7 +26,7 @@ public class JSExecute {
         return expectedResult;
     }
 
-    public List<Integer> getParams() {
+    public List<Object> getParams() {
         return params;
     }
 
