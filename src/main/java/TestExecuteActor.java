@@ -23,7 +23,7 @@ public class TestExecuteActor extends AbstractActor {
                     JSStoreMessage storeMessage = new JSStoreMessage(test.getTestName(),
                             test.getJs(), test.getParams(), result);
 
-                    
+
                 })
     }
 }
