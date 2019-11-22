@@ -6,6 +6,8 @@ public class TestExecuteActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(JSTestMessage)
+                .match(JSTestMessage.class, message -> {
+                    
+                })
     }
 }
