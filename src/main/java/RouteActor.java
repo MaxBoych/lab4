@@ -29,5 +29,6 @@ public class RouteActor extends AbstractActor {
                         executeActor.tell(jsTestMessage, self());
                     }
                 })
+                .match()
     }
 }
