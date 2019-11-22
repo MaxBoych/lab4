@@ -19,12 +19,12 @@ public class Main {
     public static void main(String[] args) {
 
         ActorSystem system = ActorSystem.create("main");
-        ActorRef mainActor = system.actorOf(Props.create(RouteActor.class));
+        ActorRef routeActor = system.actorOf(Props.create(RouteActor.class));
 
         Http http = Http.get(system);
         ActorMaterializer materializer = ActorMaterializer.create(system);
 
-        Flow<HttpRequest, HttpResponse, NotUsed> flow = new JSRouter().jsRoute(mainActor)
+        Flow<HttpRequest, HttpResponse, NotUsed> flow = new JSRouter().jsRoute(routeActor)
                 .flow(system, materializer);
 
         CompletionStage<ServerBinding> completionStage = http.bindAndHandle(
