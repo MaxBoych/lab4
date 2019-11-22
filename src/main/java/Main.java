@@ -11,12 +11,13 @@ import akka.stream.javadsl.Flow;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 import static akka.http.javadsl.server.Directives.route;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         ActorSystem system = ActorSystem.create("main");
         ActorRef routeActor = system.actorOf(Props.create(RouteActor.class));
@@ -32,6 +33,9 @@ public class Main {
                 ConnectHttp.toHost("localhost", 8080),
                 materializer
         );
+
+        System.out.println("Server online at http://localhost:8080/");
+        System.in.read();
 
         completionStage.thenCompose(ServerBinding::unbind)
                 .thenAccept(sv -> system.terminate());
