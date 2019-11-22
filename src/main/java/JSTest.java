@@ -4,9 +4,9 @@ public class JSTest {
 
     private String testName;
     private String expectedResult;
-    private ArrayList<Object> params;
+    private ArrayList<Integer> params;
 
-    public JSTest(String testName, String js, ArrayList<Object> params) {
+    public JSTest(String testName, String js, ArrayList<Integer> params) {
         this.testName = testName;
         this.expectedResult = js;
         this.params = params;
@@ -20,7 +20,7 @@ public class JSTest {
         return expectedResult;
     }
 
-    public ArrayList<Object> getParams() {
+    public ArrayList<Integer> getParams() {
         return params;
     }
 }

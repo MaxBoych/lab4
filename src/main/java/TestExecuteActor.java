@@ -14,7 +14,7 @@ public class TestExecuteActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JSTestMessage.class, message -> {
                     JSTest test = message.getTest();
-                    ArrayList<Object> params = test.getParams();
+                    ArrayList<Integer> params = test.getParams();
 
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     engine.eval(message.getJsScript());
@@ -22,7 +22,15 @@ public class TestExecuteActor extends AbstractActor {
                     String result = invocable.invokeFunction(message.getFunctionName(), params).toString();
                     boolean isExpected = result.equals(test.getExpectedResult());
 
-                    JSExecuteMessage storeMessage = new JSExecuteMessage(message.getPackageId(), );
+                    JSExecuteMessage storeMessage = new JSExecuteMessage(
+                            message.getPackageId(),
+                            new JSExecute(
+                                    test.getTestName(),
+                                    test.getExpectedResult(),
+                                    test.getParams(),
+                                    result,
+                                    isExpected)
+                    );
 
                     getSender().tell(storeMessage, ActorRef.noSender());
                 })

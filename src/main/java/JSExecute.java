@@ -8,10 +8,10 @@ public class JSExecute {
     private String result;
     private boolean isExpected;
 
-    public JSExecute(String testName, String js, ArrayList<Integer> params,
+    public JSExecute(String testName, String expectedResult, ArrayList<Integer> params,
                      String result, boolean isExpected) {
         this.testName = testName;
-        this.expectedResult = js;
+        this.expectedResult = expectedResult;
         this.params = params;
         this.result = result;
         this.isExpected = isExpected;
