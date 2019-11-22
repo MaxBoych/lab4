@@ -21,6 +21,11 @@ public class RouteActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JSToObject.class, message -> {
                     for (JSTest test : message.getTests()) {
+                        JSTestMessage jsTestMessage = new JSTestMessage(
+                                test.getTestName(),
+                                test.getExpected(),
+                                test.getFunctionName(),
+                                test.)
                         executeActor.tell();
                     }
                 })
