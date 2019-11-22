@@ -2,6 +2,7 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import java.util.ArrayList;
 
 public class TestExecuteActor extends AbstractActor {
@@ -13,7 +14,10 @@ public class TestExecuteActor extends AbstractActor {
                     JSTest test = message.getTest();
                     ArrayList<Object> params = test.getParams();
 
-                    ScriptEngine engine = new S
+                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+                    engine.eval(jscript);
+                    Invocable invocable = (Invocable) engine;
+                    return invocable.invokeFunction(functionName, params).toString();
                 })
     }
 }
