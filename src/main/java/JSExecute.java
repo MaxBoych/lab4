@@ -1,25 +1,28 @@
 import java.util.ArrayList;
 
-public class JSStore {
+public class JSExecute {
 
-    private String packageId;
-    private String jsScript;
+    private String testName;
+    private String expectedResult;
     private ArrayList<Integer> params;
     private String result;
+    private boolean isExpected;
 
-    public JSStoreMessage(String testName, String js, ArrayList<Integer> params, String result) {
-        this.packageId = testName;
-        this.jsScript = js;
+    public JSExecute(String testName, String js, ArrayList<Integer> params,
+                     String result, boolean isExpected) {
+        this.testName = testName;
+        this.expectedResult = js;
         this.params = params;
         this.result = result;
+        this.isExpected = isExpected;
     }
 
-    public String getPackageId() {
-        return packageId;
+    public String getTestName() {
+        return testName;
     }
 
-    public String getJsScript() {
-        return jsScript;
+    public String getExpectedResult() {
+        return expectedResult;
     }
 
     public ArrayList<Integer> getParams() {
@@ -28,5 +31,9 @@ public class JSStore {
 
     public String getResult() {
         return result;
+    }
+
+    public boolean isExpected() {
+        return isExpected;
     }
 }

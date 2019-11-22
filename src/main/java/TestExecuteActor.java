@@ -20,9 +20,9 @@ public class TestExecuteActor extends AbstractActor {
                     engine.eval(message.getJsScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(message.getFunctionName(), params).toString();
+                    boolean isExpected = result.equals(test.getExpectedResult());
 
-                    JSStoreMessage storeMessage = new JSStoreMessage(test.getTestName(),
-                            test.getExpectedResult(), test.getParams(), result);
+                    JSExecuteMessage storeMessage = new JSExecuteMessage(message.getPackageId(), );
 
                     getSender().tell(storeMessage, ActorRef.noSender());
                 })
