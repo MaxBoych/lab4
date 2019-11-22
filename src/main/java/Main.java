@@ -14,12 +14,10 @@ import akka.http.javadsl.model.HttpResponse;
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
-import static akka.http.javadsl.server.Directives.route;
-
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        ActorSystem system = ActorSystem.create("main");
+        ActorSystem system = ActorSystem.create();
         ActorRef routeActor = system.actorOf(Props.create(RouteActor.class));
 
         Http http = Http.get(system);
