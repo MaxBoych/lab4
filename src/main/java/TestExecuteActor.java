@@ -20,6 +20,9 @@ public class TestExecuteActor extends AbstractActor {
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(message.getFunctionName(), params).toString();
 
+                    JSStoreMessage storeMessage = new JSStoreMessage(test.getTestName(),
+                            test.getJs(), test.getParams(), result);
+
                     
                 })
     }
