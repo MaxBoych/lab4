@@ -13,7 +13,7 @@ public class JSTestMessage {
         this.functionName = functionName;
         this.test = test;
     }
-    
+
     public String getTestName() {
         return testName;
     }
