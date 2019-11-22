@@ -2,24 +2,24 @@ import java.util.ArrayList;
 
 public class JSObject {
 
-    private String testName;
-    private String js;
+    private String packageId;
+    private String jsScript;
     private String functionName;
     private ArrayList<JSTest> tests;
 
     public JSObject(String testName, String js, String functionName, ArrayList<JSTest> tests) {
-        this.testName = testName;
-        this.js = js;
+        this.packageId = testName;
+        this.jsScript = js;
         this.functionName = functionName;
         this.tests = tests;
     }
 
-    public String getTestName() {
-        return testName;
+    public String getPackageId() {
+        return packageId;
     }
 
-    public String getJS() {
-        return js;
+    public String getJsScript() {
+        return jsScript;
     }
 
     public String getFunctionName() {

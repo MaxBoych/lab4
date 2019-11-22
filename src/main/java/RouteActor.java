@@ -22,7 +22,7 @@ public class RouteActor extends AbstractActor {
                 .match(JSObject.class, message -> {
                     for (JSTest test : message.getTests()) {
                         JSTestMessage jsTestMessage = new JSTestMessage(
-                                message.getTestName(),
+                                message.getPackageId(),
                                 test.getJs(),
                                 test.getFunctionName(),
                                 test);

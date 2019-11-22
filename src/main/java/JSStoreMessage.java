@@ -2,27 +2,27 @@ import java.util.ArrayList;
 
 public class JSStoreMessage {
 
-    private String testName;
-    private String js;
-    private ArrayList<Object> params;
+    private String packageId;
+    private String jsScript;
+    private ArrayList<Integer> params;
     private String result;
 
-    public JSStoreMessage(String testName, String js, ArrayList<Object> params, String result) {
-        this.testName = testName;
-        this.js = js;
+    public JSStoreMessage(String testName, String js, ArrayList<Integer> params, String result) {
+        this.packageId = testName;
+        this.jsScript = js;
         this.params = params;
         this.result = result;
     }
 
-    public String getTestName() {
-        return testName;
+    public String getPackageId() {
+        return packageId;
     }
 
-    public String getJS() {
-        return js;
+    public String getJsScript() {
+        return jsScript;
     }
 
-    public ArrayList<Object> getParams() {
+    public ArrayList<Integer> getParams() {
         return params;
     }
 
