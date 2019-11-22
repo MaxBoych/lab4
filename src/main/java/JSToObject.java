@@ -2,20 +2,20 @@ import java.util.ArrayList;
 
 public class JSToObject {
 
-    private String id;
+    private String testName;
     private String js;
     private String functionName;
     private ArrayList<JSTest> tests;
 
-    public  JSToObject(String id, String js, String functionName, ArrayList<JSTest> tests) {
-        this.id = id;
+    public  JSToObject(String testName, String js, String functionName, ArrayList<JSTest> tests) {
+        this.testName = testName;
         this.js = js;
         this.functionName = functionName;
         this.tests = tests;
     }
 
-    public String getID() {
-        return id;
+    public String getTestName() {
+        return testName;
     }
 
     public String getJS() {

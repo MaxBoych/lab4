@@ -23,10 +23,10 @@ public class RouteActor extends AbstractActor {
                     for (JSTest test : message.getTests()) {
                         JSTestMessage jsTestMessage = new JSTestMessage(
                                 message.getTestName(),
-                                test.getExpected(),
+                                test.getJs(),
                                 test.getFunctionName(),
-                                test.)
-                        executeActor.tell();
+                                test);
+                        executeActor.tell(jsTestMessage);
                     }
                 })
     }

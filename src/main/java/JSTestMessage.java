@@ -1,15 +1,13 @@
-import java.util.ArrayList;
-
 public class JSTestMessage {
     private String testName;
-    private String expected;
+    private String js;
     private String functionName;
     private JSTest test;
 
-    public JSTestMessage(String testName, String expected,
+    public JSTestMessage(String testName, String js,
                          String functionName, JSTest test) {
         this.testName = testName;
-        this.expected = expected;
+        this.js = js;
         this.functionName = functionName;
         this.test = test;
     }
@@ -18,8 +16,8 @@ public class JSTestMessage {
         return testName;
     }
 
-    public String getExpected() {
-        return expected;
+    public String getJs() {
+        return js;
     }
 
     public String getFunctionName() {

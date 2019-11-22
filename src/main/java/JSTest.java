@@ -3,13 +3,13 @@ import java.util.ArrayList;
 public class JSTest {
 
     private String testName;
-    private String expected;
+    private String js;
     private String functionName;
     private ArrayList<Object> params;
 
-    public JSTest(String testName, String expected, String functionName, ArrayList<Object> params) {
+    public JSTest(String testName, String js, String functionName, ArrayList<Object> params) {
         this.testName = testName;
-        this.expected = expected;
+        this.js = js;
         this.functionName = functionName;
         this.params = params;
     }
@@ -18,8 +18,8 @@ public class JSTest {
         return testName;
     }
 
-    public String getExpected() {
-        return expected;
+    public String getJs() {
+        return js;
     }
 
     public String getFunctionName() {
