@@ -11,7 +11,7 @@ public class RouteActor extends AbstractActor {
 
     public RouteActor() {
         executeActor = getContext().actorOf(new RoundRobinPool(5)
-                .props(Props.create(ExecuteActor.class)));
+                .props(Props.create(TestExecuteActor.class)));
 
         storageActor = getContext().actorOf(Props.create(StoreActor.class));
     }
@@ -19,7 +19,7 @@ public class RouteActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(JSToObject.class, message -> {
+                .match(JSObject.class, message -> {
                     for (JSTest test : message.getTests()) {
                         JSTestMessage jsTestMessage = new JSTestMessage(
                                 message.getTestName(),

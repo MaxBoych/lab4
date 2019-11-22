@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-public class JSToObject {
+public class JSObject {
 
     private String testName;
     private String js;
     private String functionName;
     private ArrayList<JSTest> tests;
 
-    public  JSToObject(String testName, String js, String functionName, ArrayList<JSTest> tests) {
+    public JSObject(String testName, String js, String functionName, ArrayList<JSTest> tests) {
         this.testName = testName;
         this.js = js;
         this.functionName = functionName;

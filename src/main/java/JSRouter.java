@@ -17,7 +17,7 @@ public class JSRouter {
                     return completeOKWithFuture(getResult, Jackson.marshaller());
                 })),
 
-                post(() -> entity(Jackson.unmarshaller(JSToObject.class), message -> {
+                post(() -> entity(Jackson.unmarshaller(JSObject.class), message -> {
                     actor.tell(message, ActorRef.noSender());
                     return complete("message");
                 }))
