@@ -17,12 +17,12 @@ public class TestExecuteActor extends AbstractActor {
                     ArrayList<Object> params = test.getParams();
 
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                    engine.eval(message.getJs());
+                    engine.eval(message.getJsScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(message.getFunctionName(), params).toString();
 
                     JSStoreMessage storeMessage = new JSStoreMessage(test.getTestName(),
-                            test.getJs(), test.getParams(), result);
+                            test.getExpectedResult(), test.getParams(), result);
 
                     getSender().tell(storeMessage, ActorRef.noSender());
                 })

@@ -1,23 +1,23 @@
 public class JSTestMessage {
-    private String testName;
-    private String js;
+    private String packageId;
+    private String jsScript;
     private String functionName;
     private JSTest test;
 
     public JSTestMessage(String testName, String js,
                          String functionName, JSTest test) {
-        this.testName = testName;
-        this.js = js;
+        this.packageId = testName;
+        this.jsScript = js;
         this.functionName = functionName;
         this.test = test;
     }
 
-    public String getTestName() {
-        return testName;
+    public String getPackageId() {
+        return packageId;
     }
 
-    public String getJs() {
-        return js;
+    public String getJsScript() {
+        return jsScript;
     }
 
     public String getFunctionName() {
