@@ -34,7 +34,7 @@ public class Main {
                 materializer
         );
 
-        System.out.println("Server online at http://localhost:8080/");
+        System.out.println("Server start at http://localhost:8080/");
         System.in.read();
 
         completionStage.thenCompose(ServerBinding::unbind)
