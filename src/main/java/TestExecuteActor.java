@@ -1,6 +1,9 @@
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
+import javax.script.ScriptEngine;
+import java.util.ArrayList;
+
 public class TestExecuteActor extends AbstractActor {
 
     @Override
@@ -8,6 +11,9 @@ public class TestExecuteActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JSTestMessage.class, message -> {
                     JSTest test = message.getTest();
+                    ArrayList<Object> params = test.getParams();
+
+                    ScriptEngine engine = new S
                 })
     }
 }
