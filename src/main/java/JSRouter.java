@@ -19,7 +19,7 @@ public class JSRouter {
 
                 post(() -> entity(Jackson.unmarshaller(JSObject.class), message -> {
                     actor.tell(message, ActorRef.noSender());
-                    return complete("message replied");
+                    return complete("message sent");
                 }))
         );
     }
