@@ -26,7 +26,7 @@ public class RouteActor extends AbstractActor {
                                 test.getJs(),
                                 test.getFunctionName(),
                                 test);
-                        executeActor.tell(jsTestMessage);
+                        executeActor.tell(jsTestMessage, self());
                     }
                 })
     }
