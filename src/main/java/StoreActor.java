@@ -11,7 +11,7 @@ public class StoreActor extends AbstractActor {
     public Receive createReceive() {
 
         return ReceiveBuilder.create()
-                .match(StoreMessage.class, m -> {
+                .match(JSStoreMessage.class, message -> {
                     store.put(m.getKey(), m.getValue());
                     System.out.println("receive message! "+m.toString());
                 })
