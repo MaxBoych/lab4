@@ -26,7 +26,7 @@ public class StoreActor extends AbstractActor {
                             ArrayList<JSExecuteMessage> list = store.get(message.getPackageId());
 
                             if (list != null) {
-                                sender().tell(list.toArray(), ActorRef.noSender());
+                                sender().tell(list.toArray(), self());
                             }
                         }
                 ).build();
