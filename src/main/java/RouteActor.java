@@ -32,4 +32,12 @@ public class RouteActor extends AbstractActor {
                 .match(Message.class, message -> storageActor.tell(message, sender()))
                 .build();
     }
+
+    public ActorRef getStorageActor() {
+        return storageActor;
+    }
+
+    public ActorRef getExecuteActor() {
+        return executeActor;
+    }
 }
