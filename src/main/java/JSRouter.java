@@ -12,7 +12,7 @@ public class JSRouter {
     public Route jsRoute(ActorRef actor) {
         return route(
 
-                get(() -> parameter("message", message -> {
+                get(() -> parameter("packageId", message -> {
                     Future<Object> getResult = Patterns.ask(actor, new Message(message), 5000);
                     return completeOKWithFuture(getResult, Jackson.marshaller());
                 })),
