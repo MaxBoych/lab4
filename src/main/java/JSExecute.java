@@ -5,11 +5,19 @@ import java.util.List;
 
 public class JSExecute {
 
-    @JsonProperty(Config.PACKAGE_ID)
+    @JsonProperty(Config.TEST_NAME)
     private String testName;
+
+    @JsonProperty(Config.EXPECTED_RESULT)
     private String expectedResult;
+
+    @JsonProperty(Config.PARAMS)
     private Object[] params;
+
+    @JsonProperty(Config.RESULT)
     private String result;
+
+    @JsonProperty(Config.IS_EXPECTED)
     private boolean isExpected;
 
     public JSExecute(String testName, String expectedResult, Object[] params,
