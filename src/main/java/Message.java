@@ -1,13 +1,13 @@
 public class Message {
 
-    private String testName;
+    private String packageId;
 
-    public Message(String testName) {
-        this.testName = testName;
+    public Message(String packageId) {
+        this.packageId = packageId;
     }
 
-    public String getTestName() {
-        return testName;
+    public String getPackageId() {
+        return packageId;
     }
 }
 
