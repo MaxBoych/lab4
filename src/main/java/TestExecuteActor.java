@@ -1,8 +1,6 @@
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
-import akka.http.javadsl.server.Route;
 import akka.japi.pf.ReceiveBuilder;
-import akka.routing.RouterActor;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -36,7 +34,7 @@ public class TestExecuteActor extends AbstractActor {
                                     isExpected)
                     );
 
-                    getContext()..tell(storeMessage, ActorRef.noSender());
+                    Actors.storeActor.tell(storeMessage, ActorRef.noSender());
                 })
                 .build();
     }
