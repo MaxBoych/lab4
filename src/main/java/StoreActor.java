@@ -24,7 +24,10 @@ public class StoreActor extends AbstractActor {
                 })
                 .match(Message.class, message -> {
                             ArrayList<JSExecuteMessage> list = store.get(message.getPackageId());
-
+                            for (JSExecuteMessage m : list) {
+                                System.out.println(m.getPackageId());
+                            }
+                            
                             if (list != null) {
                                 sender().tell(list.toArray(), self());
                             }
