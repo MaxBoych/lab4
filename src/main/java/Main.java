@@ -28,11 +28,11 @@ public class Main {
 
         CompletionStage<ServerBinding> completionStage = http.bindAndHandle(
                 flow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost(Config.HOST, Config.PORT),
                 materializer
         );
 
-        System.out.println("Server start at http://localhost:8080/");
+        System.out.println("Server start at http://" + Config.HOST + ":" + Config.PORT);
         System.in.read();
 
         completionStage.thenCompose(ServerBinding::unbind)
