@@ -15,7 +15,7 @@ public class JSObject {
     @JsonProperty(Config.FUNCTION_NAME)
     private String functionName;
 
-    @JsonProperty(Config.TEST)
+    @JsonProperty(Config.TESTS)
     private JSTest[] tests;
 
     public JSObject(String testName, String js,
