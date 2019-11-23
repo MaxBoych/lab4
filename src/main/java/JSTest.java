@@ -6,9 +6,13 @@ import java.util.List;
 
 public class JSTest {
 
-    @JsonProperty(Config.PACKAGE_ID)
+    @JsonProperty(Config.TEST_NAME)
     private String testName;
+
+    @JsonProperty(Config.EXPECTED_RESULT)
     private String expectedResult;
+
+    @JsonProperty(Config.PARAMS)
     private Object[] params;
 
     public JSTest(String testName, String js, Object[] params) {

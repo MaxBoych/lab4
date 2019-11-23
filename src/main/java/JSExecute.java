@@ -1,8 +1,11 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class JSExecute {
 
+    @JsonProperty(Config.PACKAGE_ID)
     private String testName;
     private String expectedResult;
     private Object[] params;
