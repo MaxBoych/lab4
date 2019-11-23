@@ -10,10 +10,10 @@ public class RouteActor extends AbstractActor {
     private ActorRef storageActor;*/
 
     public RouteActor() {
-        Actors.executeActor = getContext().actorOf(new RoundRobinPool(5)
+        TestExecuteActor.executeActor = getContext().actorOf(new RoundRobinPool(5)
                 .props(Props.create(TestExecuteActor.class)));
 
-        Actors.storeActor = getContext().actorOf(Props.create(StoreActor.class));
+        StoreActor.storeActor = getContext().actorOf(Props.create(StoreActor.class));
     }
 
     @Override
@@ -26,10 +26,10 @@ public class RouteActor extends AbstractActor {
                                 message.getJsScript(),
                                 message.getFunctionName(),
                                 test);
-                        Actors.executeActor.tell(jsTestMessage, self());
+                        TestExecuteActor.executeActor.tell(jsTestMessage, self());
                     }
                 })
-                .match(Message.class, message -> Actors.storeActor.tell(message, sender()))
+                .match(Message.class, message -> StoreActor.storeActor.tell(message, sender()))
                 .build();
     }
 

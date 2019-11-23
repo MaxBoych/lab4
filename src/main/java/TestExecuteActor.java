@@ -10,6 +10,8 @@ import java.util.List;
 
 public class TestExecuteActor extends AbstractActor {
 
+    public static ActorRef executeActor;
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
@@ -33,7 +35,7 @@ public class TestExecuteActor extends AbstractActor {
                                     isExpected)
                     );
 
-                    Actors.storeActor.tell(storeMessage, ActorRef.noSender());
+                    StoreActor.storeActor.tell(storeMessage, ActorRef.noSender());
                 })
                 .build();
     }

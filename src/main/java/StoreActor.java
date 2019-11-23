@@ -9,6 +9,8 @@ import java.util.Map;
 public class StoreActor extends AbstractActor {
     private Map<String, ArrayList<JSExecuteMessage>> store = new HashMap<>();
 
+    public static ActorRef storeActor;
+
     @Override
     public Receive createReceive() {
 
