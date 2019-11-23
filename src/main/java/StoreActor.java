@@ -1,4 +1,5 @@
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class StoreActor extends AbstractActor {
                             ArrayList<JSExecuteMessage> list = store.get(message.getTestName());
 
                             if (list != null) {
-                                sender().tell(list.toArray(), self());
+                                sender().tell(list.toArray(), ActorRef.noSender());
                             }
                         }
                 ).build();
