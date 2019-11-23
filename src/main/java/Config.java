@@ -3,6 +3,11 @@ public class Config {
     public static final String HOST = "localhost";
     public static final int PORT = 8080;
 
+    public static final String SCRIPT_ENGINE_NAME = "nashorn";
+    public static final String PARAMETER_NAME = "packageId";
+    public static final int ACTORS_COUNT = 5;
+    public static final int TIMEOUT_MILLIS = 5000;
+
     public static final String PACKAGE_ID = "packageId";
     public static final String JS_SCRIPT = "jsScript";
     public static final String FUNCTION_NAME = "functionName";

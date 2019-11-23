@@ -6,11 +6,8 @@ import akka.routing.RoundRobinPool;
 
 public class RouteActor extends AbstractActor {
 
-    /*private ActorRef executeActor;
-    private ActorRef storageActor;*/
-
     public RouteActor() {
-        TestExecuteActor.executeActor = getContext().actorOf(new RoundRobinPool(5)
+        TestExecuteActor.executeActor = getContext().actorOf(new RoundRobinPool(Config.ACTORS_COUNT)
                 .props(Props.create(TestExecuteActor.class)));
 
         StoreActor.storeActor = getContext().actorOf(Props.create(StoreActor.class));
@@ -32,12 +29,4 @@ public class RouteActor extends AbstractActor {
                 .match(Message.class, message -> StoreActor.storeActor.tell(message, sender()))
                 .build();
     }
-
-    /*public ActorRef getStorageActor() {
-        return storageActor;
-    }
-
-    public ActorRef getExecuteActor() {
-        return executeActor;
-    }*/
 }

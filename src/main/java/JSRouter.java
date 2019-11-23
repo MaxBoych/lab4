@@ -12,8 +12,8 @@ public class JSRouter {
     public Route jsRoute(ActorRef actor) {
         return route(
 
-                get(() -> parameter("packageId", message -> {
-                    Future<Object> getResult = Patterns.ask(actor, new Message(message), 5000);
+                get(() -> parameter(Config.PARAMETER_NAME, message -> {
+                    Future<Object> getResult = Patterns.ask(actor, new Message(message), Config.TIMEOUT_MILLIS);
                     return completeOKWithFuture(getResult, Jackson.marshaller());
                 })),
 

@@ -19,7 +19,7 @@ public class TestExecuteActor extends AbstractActor {
                     JSTest test = message.getTest();
                     Object[] params = test.getParams();
 
-                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+                    ScriptEngine engine = new ScriptEngineManager().getEngineByName(Config.SCRIPT_ENGINE_NAME);
                     engine.eval(message.getJsScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(message.getFunctionName(), params).toString();
