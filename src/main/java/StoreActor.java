@@ -27,7 +27,7 @@ public class StoreActor extends AbstractActor {
                             for (JSExecuteMessage m : list) {
                                 System.out.println(m.getPackageId());
                             }
-                            
+
                             if (list != null) {
                                 sender().tell(list.toArray(), self());
                             }
