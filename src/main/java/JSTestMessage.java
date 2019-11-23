@@ -4,10 +4,10 @@ public class JSTestMessage {
     private String functionName;
     private JSTest test;
 
-    public JSTestMessage(String testName, String js,
+    public JSTestMessage(String packageId, String jsScript,
                          String functionName, JSTest test) {
-        this.packageId = testName;
-        this.jsScript = js;
+        this.packageId = packageId;
+        this.jsScript = jsScript;
         this.functionName = functionName;
         this.test = test;
     }

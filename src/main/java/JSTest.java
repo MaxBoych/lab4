@@ -15,9 +15,9 @@ public class JSTest {
     @JsonProperty(Config.PARAMS)
     private Object[] params;
 
-    public JSTest(String testName, String js, Object[] params) {
+    public JSTest(String testName, String expectedResult, Object[] params) {
         this.testName = testName;
-        this.expectedResult = js;
+        this.expectedResult = expectedResult;
         this.params = params;
     }
 
