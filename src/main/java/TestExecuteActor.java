@@ -23,6 +23,7 @@ public class TestExecuteActor extends AbstractActor {
                     String result = invocable.invokeFunction(message.getFunctionName(), params).toString();
                     boolean isExpected = result.equals(test.getExpectedResult());
 
+                    System.out.println("FGGFGGFGFFG");
                     JSExecuteMessage storeMessage = new JSExecuteMessage(
                             message.getPackageId(),
                             new JSExecute(
