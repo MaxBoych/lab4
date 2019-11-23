@@ -18,9 +18,9 @@ public class JSObject {
     @JsonProperty(Config.TESTS)
     private JSTest[] tests;
 
-    public JSObject(String testName, String jsScript,
+    public JSObject(String packageId, String jsScript,
                     String functionName, JSTest[] tests) {
-        this.packageId = testName;
+        this.packageId = packageId;
         this.jsScript = jsScript;
         this.functionName = functionName;
         this.tests = tests;
