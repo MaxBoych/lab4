@@ -16,10 +16,12 @@ public class StoreActor extends AbstractActor {
                 .match(JSExecuteMessage.class, message -> {
                     if (store.containsKey(message.getPackageId())) {
                         store.get(message.getPackageId()).add(message);
+                        System.out.println("kek");
                     } else {
                         ArrayList<JSExecuteMessage> list = new ArrayList<>();
                         list.add(message);
                         store.put(message.getPackageId(), list);
+                        System.out.println("lol");
                     }
                 })
                 .match(Message.class, message -> {
